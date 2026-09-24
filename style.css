@@ -45,8 +45,10 @@ img {
     --text-200-line-height: 1.5;
     --text-100-font-size: 0.875em;
     --text-100-line-height: 1.5;
+    --text-body-size-medium:14px;
     --font-weight-medium: 500;
     --font-weight-semibold: 550;
+    --font-weight-subtitle:34px;
     --border-width: 1px;
     --focus-outline-width: 0.25em;
     --focus-outline-offset: 0.125em;
@@ -108,13 +110,67 @@ body {
     fill: var(--color-cursor);
 }
 
+.torna-all-inizio{
+    color: var(--color-black);
+}
+.hecontainer-project{
+display: inline-grid;
+row-gap: 48px;
+column-gap: 48px;
+align-self: stretch;
+grid-template-rows: 565.79px;
+grid-template-columns: 734.66px 367.34px;  
+}
+
+.cointainer-project-1{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
+align-self: stretch;
+grid-row: 1 / span 1;
+grid-column: 1 / span1;
+justify-self: stretch;
+}
+
+.project-title{
+color: var(--color-black);
+font-family: var(--font-mono);
+padding-bottom: 16px;;
+font-size: 34px;
+font-style: normal;
+font-weight: var(--font-weight-medium);
+line-height: 44.2px;
+}
+
+.project-text{
+    color:var(--color-black);
+    font-family: var(--font-body);
+    gap:32px;
+    margin-right: 257px;
+
+    
+}
+
 .heading {
-    font-weight: 400;
+color: var(--color-muted);
+font-family: var(--font-mono);
+gap:32px;
+font-size:14px;
+padding-bottom: 16px;
+font-style: normal;
+font-weight: var(--eyebrow-font-size);
+line-height: 21px; /* 150% */
+letter-spacing: 1px;
+text-transform: uppercase;
 }
 
 .heading-size-1 {
     font-size: var(--heading-1-font-size);
     line-height: var(--heading-1-line-height);
+    font-family: var(--heading-1-font-size);
+    color:var(--color-black)
+    
 }
 
 .text-size-200 {
@@ -529,7 +585,7 @@ body {
 
     padding: var(--chapters-padding);
     color: var(--color-white);
-    background: var(--color-black);
+    background: var(--color-white);
     line-height: var(--text-200-line-height);
 }
 
