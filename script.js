@@ -34,20 +34,20 @@ if (supportsNavigation) {
   navigationButton.hidden = true;
 }
 
-// Chiudiamo il popover se clicchiamo fuori (ad eccezione di alcuni casi) e lasciamo al link HTML la navigazione al capitolo
+
 navigationPanel.addEventListener('click', function (event) {
   const link = event.target.closest('a[href^="#"]');
   if (!link || event.defaultPrevented || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
   const target = document.getElementById(link.hash.slice(1));
   if (!target) return;
   if (supportsNavigation && navigationPanel.matches(':popover-open')) navigationPanel.hidePopover();
-  // Il link continua ad aggiornare il frammento e a scorrere con il comportamento HTML.
+  
 });
 document.querySelector('.skip-link').addEventListener('click', function () {
   document.querySelector('#top').focus();
 });
 
-// Bonus accessibilità: se cambia il breakpoint, manteniamo il focus dove serve
+
 desktopMedia.addEventListener('change', function () {
   if (!supportsNavigation) return;
   const focused = document.activeElement;

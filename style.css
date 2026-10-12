@@ -43,7 +43,7 @@ img {
     --headding-4-font-size:34px;
     --heading-4-font-weight:500px;
     --heading-4-line-height:44,2px;
-    --heading-4-font-weight: 500;
+    --heading-4-font-weight: 500px;
     --text-200-font-size: 16px;
     --text-350-font-size:16px;
     --text-350-line-height:1.5;
@@ -593,7 +593,7 @@ body {
     }
 }
 
-/* Su desktop JS rimuove popover e gli elementi si dispongono in linea */
+
 @media (min-width: 1000px) {
     .navigation {
         --navigation-inline-list-padding: 0 0 0 1em;
@@ -654,12 +654,11 @@ body {
     }
 }
 
-   .heading-size-4 {
-    font-size: var(--heading-4-font-size);
-    font-weight: var(--heading-4-font-weight);
-    line-height: var(--heading-4-line-height);
-    color: var(--color-black);
-}
+  .container-case-study{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 
 .breakdownTabs {
@@ -755,6 +754,7 @@ body {
     width: 100%;
 }
 
+
 .breakdownTabs-toggle {
     display: none;
     font-size: 12px;
@@ -798,11 +798,6 @@ body {
         transform: scaleY(3);
     }
 }
-
-
-/* =========================================
-   DESKTOP
-   ========================================= */
 
 @media (min-width: 1000px) {
 
