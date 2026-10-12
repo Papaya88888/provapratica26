@@ -58,3 +58,34 @@ desktopMedia.addEventListener('change', function () {
   else if (desktopMedia.matches && focusOnButton) navigationPanel.querySelector('a').focus();
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
+
+
+const breakdownTabs = document.querySelector('.breakdownTabs');
+const breakdownTabsItems = document.querySelectorAll('.breakdownTabs-item');
+const breakdownTabsButtons = document.querySelectorAll('.breakdownTabs-button');
+
+if (breakdownTabs) {
+
+    breakdownTabs.classList.add('breakdownTabs-ready');
+
+    function selectBreakdownTab(index) {
+
+        for (let i = 0; i < breakdownTabsItems.length; i++) {
+
+            if (i === index) {
+                breakdownTabsItems[i].classList.add('is-selected');
+            } else {
+                breakdownTabsItems[i].classList.remove('is-selected');
+            }
+
+        }
+    }
+
+    breakdownTabsButtons.forEach(function (button, index) {
+
+        button.addEventListener('click', function () {
+            selectBreakdownTab(index);
+        });
+
+    });
+}
