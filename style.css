@@ -778,6 +778,10 @@ body {
     color: var(--color-muted);
 }
 
+.breakdownTabs-item.is-selected{
+    color: var(--color-black);
+}
+
 .breakdownTabs-item::before {
     content: "";
     position: absolute;
@@ -879,11 +883,6 @@ body {
 
     .breakdownTabs-item {
         border-bottom: 0;
-        color: var(--color-muted);
-    }
-
-    .breakdownTabs-item.is-selected {
-        color: var(--color-black);
     }
 
     .breakdownTabs-item::before {
