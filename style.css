@@ -30,10 +30,10 @@ img {
     --font-mono: "Mona Sans Mono";
     --color-black: #000;
     --color-white: #fff;
-    --color-muted: #6B756E;
+    --color-muted: #58635B;
     --color-muted-on-dark: #A4AEA6;
     --color-border-muted: #E4EBE6;
-    --color-cursor: #5FED83;
+    --color-cursor: #08872B;
     --color-button-primary-bg: #08872B;
     --color-button-secondary-bg: rgba(255, 255, 255, 0.12);
     --color-button-secondary-border: rgba(255, 255, 255, 0.06);
@@ -227,7 +227,7 @@ body {
     --navigation-toggle-width: 3em;
     --navigation-toggle-padding: 0.25em 0.75em;
     --navigation-toggle-open-background: #090D0A;
-    --navigation-icon-size: 1em;
+    --navigation-icon-size: 24px;
     --navigation-reveal-duration: 0.5s;
     --navigation-reveal-easing: ease;
     --navigation-reveal-offset: -1.25em;
@@ -242,7 +242,7 @@ body {
 }
 
 .navigation a {
-    color: var(--color-muted-on-dark);
+    color: inherit;
 }
 
 .navigation a:focus-visible,
@@ -293,7 +293,7 @@ body {
     left: var(--navigation-back-arrow-offset);
     transform: translateY(-50%);
     opacity: 0;
-    color: var(--color-muted);
+    color: var(--color-muted-on-dark);
     font-size: var(--navigation-back-arrow-font-size);
     line-height: var(--navigation-back-arrow-line-height);
 }
@@ -561,9 +561,12 @@ body {
 
     .container-project {
     display: flex;
-    width: 1280px;
+    width: 100%;
     max-width: 1280px;
-    padding: var(--spacing-64);
+    width: 100%;
+    border-right: 1px solid var(--color-border-muted);
+    border-left: 1px solid var(--color-border-muted);
+    padding: 32px 16px;
     flex-direction: column;
     align-items: flex-start;
 }
@@ -574,9 +577,10 @@ body {
 
 .container-project-1 {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
     align-items: start;
+    
 
 }
 
@@ -584,19 +588,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 16px;
     align-self: stretch;
     grid-row: 1 span 1;
-    grid-column: 1 span 1;
+    grid-column: 1 span 1;   
+}
 
-
+.contenuto-project-1 .eyebrow{
+    justify-content: flex-start;
+    font-family: var(--font-mono);
+}
+.contenuto-project-1 .eyebrow-cursor rect {
+    fill: var(--color-button-primary-bg);
 }
 
 .project-title {
     color: var(--color-black);
     font-family: var(--font-weight-semibold);
-    padding-bottom: 16px;
-    ;
+    padding-bottom: 0;
     font-size: 34px;
     font-style: normal;
     font-weight: var(--font-weight-semibold);
@@ -604,9 +613,12 @@ body {
 }
 
 .project-text {
-    color: var(--color-black);
+    color: var(--color-muted);
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 24px;
     font: weight 400px;
+    max-width: 477px;
 }
 
 .sotto-paragrafo-project-text {
@@ -637,23 +649,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 16px;
+    padding: 0;
 }
 
 .elenco-project-2 {
     display: block;
-    padding: 12px 16px;
+    padding: 16px;
     font-size: 14px;
     color: var(--color-muted);
     text-decoration: none;
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
+    margin-left: 16px;
+
 }
 
 .title-contenuto-project-2 {
     color: #000;
     font-size: 18px;
     font-weight: var(--text-100-font-size);
-    margin: 0 0 16px 0;
+    margin-bottom: 24px;
 }
 
 .contenuto-project-3 {
@@ -669,7 +684,9 @@ body {
 .secondo-blocco-project-3,
 .terzo-blocco-project-3 {
     display: flex;
-    padding: var(--spacing-64);
+    padding: 32px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border-muted);
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
@@ -679,8 +696,8 @@ body {
 
 
 .info-studente {
-    border-top: 1px solid #A4AEA6;
-    border-bottom: 1px solid #A4AEA6;
+    border-top: 1px solid var(--color-border-muted);
+    border-bottom: 1px solid var(--color-border-muted);
 
 }
 
@@ -688,14 +705,14 @@ body {
     display: grid;
     max-width: 1280px;
     align-items: start;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto;
-    padding: 24px 64px;
-    border-left: 1px solid #A4AEA6;
-    border-right: 1px solid #A4AEA6;
+    padding: 24px 16px;
+    border-left: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
 }
 
 .contenuto-info-studente {
@@ -870,6 +887,34 @@ body {
 }
 
 @media (min-width: 1000px) {
+    .container-project{
+        padding: var(--spacing-64);   
+    }
+    .container-project-1{
+        grid-template-columns: minmax(0, 1fr) 300px;
+
+    }
+    .contenitore-info-studente{
+        grid-template-columns: repeat(4, minmax(0,1fr));
+        padding: 24px 64px;
+    }
+    .contenuto-project-3{
+        padding: var(--spacing-64);
+        border-bottom: 0;
+        border-right: 1px solid var(--color-border-muted);
+    }
+    .primo-blocco-project-3,
+    .secondo-blocco-project-3,
+    .terzo-blocco-project-3{
+        padding: var(--spacing-64);
+        border-bottom: 0;
+        border-right: 1px solid var(--color-border-muted);
+    }
+    .terzo-blocco-project-3{
+        border-right: 0;
+    }
+
+
 
     .breakdownTabs-content {
         padding: 0 var(--spacing-64);
