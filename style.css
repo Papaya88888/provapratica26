@@ -30,7 +30,8 @@ img {
     --font-mono: "Mona Sans Mono";
     --color-black: #000;
     --color-white: #fff;
-    --color-muted: #A4AEA6;
+    --color-muted: #6B756E;
+    --color-muted-on-dark: #A4AEA6;
     --color-border-muted: #E4EBE6;
     --color-cursor: #5FED83;
     --color-button-primary-bg: #08872B;
@@ -241,7 +242,7 @@ body {
 }
 
 .navigation a {
-    color: inherit;
+    color: var(--color-muted-on-dark);
 }
 
 .navigation a:focus-visible,
@@ -306,10 +307,11 @@ body {
     font-size: var(--navigation-title-font-size);
     font-weight: var(--font-weight-medium);
     line-height: var(--navigation-title-line-height);
+
 }
 
 .navigation-title span {
-    color: var(--color-muted);
+    color: var(--color-muted-on-dark);
 }
 
 .navigation-menu {
@@ -486,7 +488,7 @@ body {
 
     .navigation-list a {
         min-height: var(--navigation-link-min-height);
-        color: var(--color-muted);
+        color: var(--color-muted-on-dark);
         border-radius: var(--radius-control);
     }
 
