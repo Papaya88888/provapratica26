@@ -66,6 +66,15 @@ img {
     --layer-navigation: 90;
     --layer-skip-link: 100;
     --icon-size: 20px;
+    --color-border-on-dark: #191F1B;
+    --color-swatch-border: #2A2F2B;
+    --color-cursor-on-dark: #5FED83;
+    --color-swatch-red: #A03424;
+    --color-swatch-cyan: #68E4E1;
+    --color-swatch-gold: #CEB744;
+    --color-swatch-blue: #5C68CE;
+    --color-swatch-cyan-light: #7EC6C8;
+    --color-swatch-purple: #A96DCC;
 }
 
 @media (max-width: 640px) {
@@ -905,6 +914,182 @@ body {
     .struttura-immagine-sinistra {
         width: 640px;
         justify-self: start;
+    }
+}
+
+
+.palette {
+    background: var(--color-black);
+    border-top: 1px solid var(--color-border-on-dark);
+}
+
+.palette-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.palette-intro,
+.palette-colori,
+.palette-layout {
+    border-left: 1px solid var(--color-border-on-dark);
+    border-right: 1px solid var(--color-border-on-dark);
+}
+
+.palette-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+}
+
+.palette-intro-contenuto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.palette .eyebrow {
+    color: var(--color-muted-on-dark);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    line-height: 21px;
+    gap: 6px;
+}
+
+.palette-titolo {
+    color: var(--color-white);
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 44.2px;
+}
+
+.palette-testo {
+    color: var(--color-muted-on-dark);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.24px;
+}
+
+.palette-intro .palette-testo {
+    max-width: 477px;
+}
+
+
+.palette-colori {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px 32px;
+}
+
+.palette-etichetta {
+    color: var(--color-muted-on-dark);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.palette-lista + .palette-etichetta {
+    margin-top: 16px;
+}
+
+.palette .eyebrow-cursor rect {
+    fill: var(--color-cursor-on-dark);
+}
+
+.palette-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    list-style: none;
+}
+
+.palette-colore {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.palette-campione {
+    display: block;
+    height: 80px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-swatch-border);
+    border-radius: 8px;
+}
+
+.palette-nome {
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+}
+
+.palette-ruolo {
+    color: var(--color-muted-on-dark);
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 19.5px;
+}
+
+.palette-bianco        { background: var(--color-white); }
+.palette-nero          { background: var(--color-black); }
+.palette-rosso         { background: var(--color-swatch-red); border-color: transparent; }
+.palette-azzurro       { background: var(--color-swatch-cyan); border-color: transparent; }
+.palette-oro           { background: var(--color-swatch-gold); }
+.palette-blu           { background: var(--color-swatch-blue); }
+.palette-azzurro-chiaro{ background: var(--color-swatch-cyan-light); }
+.palette-viola         { background: var(--color-swatch-purple); }
+
+.palette-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    border-top: 1px solid var(--color-border-on-dark);
+}
+
+.palette-layout-testi {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 16px;
+}
+
+.palette-layout-vuoto {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    .palette-intro {
+        padding: var(--spacing-64);
+    }
+
+    .palette-colori {
+        padding: 0 var(--spacing-64) var(--spacing-64);
+    }
+
+    .palette-lista {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .palette-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .palette-layout-testi {
+        max-width: 100%;
+        padding: var(--spacing-64) var(--spacing-64) var(--spacing-64) 112px;
+    }
+
+    .palette-layout-vuoto {
+        display: block;
+        min-height: 400px;
+        background: var(--color-black);
     }
 }
 
