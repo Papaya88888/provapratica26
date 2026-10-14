@@ -46,7 +46,7 @@ img {
     --heading-4-line-height: 44, 2px;
     --heading-4-font-weight: 500px;
     --text-200-font-size: 16px;
-    --text-350-font-size: 16px;
+    --text-350-font-size: 22px;
     --text-350-line-height: 1.5;
     --heading-1-font-size: 56px;
     --heading-1-line-height: 1.1;
@@ -337,7 +337,10 @@ body {
 .navigation-list a:hover {
     color: var(--color-white);
 }
-
+.sottotitolo{
+    font-size: var(--text-350-font-size);
+    font-weight: var(--font-weight-subtitle);
+}
 /* Il layout "compatto" dipende se l'attributo popover è presente (su desktop viene rimosso via JS) */
 .navigation:has(.navigation-panel[popover]) {
     height: var(--navigation-height);
@@ -436,7 +439,7 @@ body {
     }
 }
 
-/* Su tablet cambia il layout, ma il popover resta attivo */
+
 @media (min-width: 48rem) {
     .navigation {
         --navigation-height: 4em;
@@ -558,6 +561,23 @@ body {
         outline: var(--focus-outline-width) solid var(--color-focus);
         outline-offset: var(--focus-outline-offset);
     }
+
+    .contenuto-project-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .primo-blocco-project-3,
+    .secondo-blocco-project-3,
+    .terzo-blocco-project-3{
+        padding: var(--spacing-64);
+        border-bottom: 0;
+        border-right: 1px solid var(--color-border-muted);
+    }
+    .terzo-blocco-project-3{
+        border-right: 0;
+    }
+
+
 }
 
     .container-project {
@@ -571,11 +591,14 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
-.icon{
+.icona-blocco{
     box-sizing: content-box;
+    width: 32px;
+    height: 32px;
     padding: 12px;
     border-radius: 12px;
-    background: #ebf9f4;;
+    background: #ebf9f4;
+    margin-bottom: 48px;
 }
 
 .container-project-1 {
@@ -678,13 +701,24 @@ body {
     margin-bottom: 24px;
 }
 
+.titolo-contenuto-project-3{
+    color: var(--color-black);
+    font-size: var(--text-350-font-size);
+    font-weight: var(--font-weight-semibold);
+}
+
 .contenuto-project-3 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax (0, 1fr);
     width: 100%;
+    color: var(--color-muted);
     max-width: 1280px;
     margin: 0 auto;
     box-sizing: border-box;
+    font-size: var(--text-200-line-height);
+    border-top: 1px solid var(--color-border-muted);
+    border-left: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
 }
 
 .primo-blocco-project-3,
@@ -693,12 +727,16 @@ body {
     display: flex;
     padding: 32px 16px;
     border-right: 0;
+    border-right: 0;
     border-bottom: 1px solid var(--color-border-muted);
     flex-direction: column;
     align-items: flex-start;
     box-sizing: border-box;
-    border-right: 1px solid var(--color-muted);
     justify-self: stretch;
+}
+
+.terzo-blocco-project-3{
+    border-bottom: 0;
 }
 
 
@@ -749,7 +787,6 @@ body {
     letter-spacing: 0.24px;
 }
 
-/* ===== Sezione Struttura ===== */
 .struttura {
     background: var(--color-white);
     border-top: 1px solid var(--color-border-muted);
@@ -811,7 +848,7 @@ body {
     max-width: 477px;
 }
 
-/* Mobile: tutto in colonna */
+
 .struttura-griglia {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -836,7 +873,7 @@ body {
     object-fit: contain;
 }
 
-/* Da 1000px: testi e immagini affiancati, come nel Figma */
+
 @media (min-width: 1000px) {
     .struttura-intro {
         padding: var(--spacing-64);
@@ -863,7 +900,7 @@ body {
     }
 }
 
-/* Alla larghezza del design (1280px) l'immagine in basso a sinistra parte dal bordo della colonna, come in Figma */
+
 @media (min-width: 1280px) {
     .struttura-immagine-sinistra {
         width: 640px;
@@ -988,8 +1025,8 @@ body {
 .breakdownTabs-text {
     padding: 0 0 24px 0;
     color: var(--color-black);
-    font-size: var(--text-350-font-size);
-    line-height: var(--text-350-line-height);
+    font-size: var(--text-200-font-size);
+    line-height: var(--text-200-line-height);
 }
 
 .breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
