@@ -161,12 +161,13 @@ body {
 }
 
 .button-primary {
-    background-color: var(--color-button-primary-bg);
-    border-color: transparent;
+    background-color: var(--color-white);
+    border-color: 1px var(--color-muted);
 }
 
 .button-primary:hover {
     background-color: color-mix(in srgb, var(--color-button-primary-bg), #000 16%);
+    color: var(--color-border-muted);
 }
 
 .button-secondary {
@@ -571,13 +572,15 @@ body {
     align-items: flex-start;
 }
 .icon{
-    width: 32px;
-    height: 32px;
+    box-sizing: content-box;
+    padding: 12px;
+    border-radius: 12px;
+    background: #ebf9f4;;
 }
 
 .container-project-1 {
     display: grid;
-    grid-template-columns:minmax(0, 1fr) 367px;
+    grid-template-columns:minmax(0, 1fr);
     gap: 48px;
     align-items: start;
     
@@ -746,6 +749,129 @@ body {
     letter-spacing: 0.24px;
 }
 
+/* ===== Sezione Struttura ===== */
+.struttura {
+    background: var(--color-white);
+    border-top: 1px solid var(--color-border-muted);
+}
+
+.struttura-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.struttura-intro,
+.struttura-griglia {
+    border-left: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
+}
+
+.struttura-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+}
+
+.struttura-intro-contenuto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 900px;
+    text-align: center;
+}
+
+.struttura .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    line-height: 21px;
+    gap: 6px;
+}
+
+.struttura .eyebrow-cursor rect {
+    fill: var(--color-button-primary-bg);
+}
+
+.struttura-titolo {
+    color: var(--color-black);
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 44.2px;
+}
+
+.struttura-testo {
+    color: var(--color-muted);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.24px;
+}
+
+.struttura-intro .struttura-testo {
+    max-width: 477px;
+}
+
+/* Mobile: tutto in colonna */
+.struttura-griglia {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    padding-bottom: 32px;
+}
+
+.struttura-testi {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px 0;
+}
+
+.struttura-immagine {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: 640px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
+    object-fit: contain;
+}
+
+/* Da 1000px: testi e immagini affiancati, come nel Figma */
+@media (min-width: 1000px) {
+    .struttura-intro {
+        padding: var(--spacing-64);
+    }
+
+    .struttura-griglia {
+        grid-template-columns: minmax(0, 539fr) minmax(0, 739fr);
+        grid-template-rows: repeat(2, minmax(573px, auto));
+        align-items: center;
+        gap: 0;
+        padding-bottom: 0;
+    }
+
+    .struttura-testi {
+        align-self: stretch;
+        padding: var(--spacing-64) var(--spacing-64) var(--spacing-64) 112px;
+    }
+
+    .struttura-immagine {
+        width: min(640px, 100%);
+        height: 400px;
+        margin: 0;
+        justify-self: center;
+    }
+}
+
+/* Alla larghezza del design (1280px) l'immagine in basso a sinistra parte dal bordo della colonna, come in Figma */
+@media (min-width: 1280px) {
+    .struttura-immagine-sinistra {
+        width: 640px;
+        justify-self: start;
+    }
+}
+
+
 .container-case-study {
     display: flex;
     flex-direction: column;
@@ -895,7 +1021,7 @@ body {
         padding: var(--spacing-64);   
     }
     .container-project-1{
-        grid-template-columns: minmax(0, 1fr) 300px;
+        grid-template-columns: minmax(0, 1fr) 367px;
 
     }
     .contenitore-info-studente{
