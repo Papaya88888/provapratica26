@@ -59,6 +59,30 @@ desktopMedia.addEventListener('change', function () {
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
 
+// Accordion "Scelte di progetto": si apre una voce alla volta
+const bottoniScelte = document.querySelectorAll('.scelte-domanda');
+
+bottoniScelte.forEach((bottone) => {
+  bottone.addEventListener('click', () => {
+    const giaAperto = bottone.getAttribute('aria-expanded') === 'true';
+
+    // chiude tutte le voci
+    bottoniScelte.forEach((altro) => {
+      altro.setAttribute('aria-expanded', 'false');
+      altro.closest('.scelte-item').classList.remove('is-open');
+      document.getElementById(altro.getAttribute('aria-controls')).hidden = true;
+    });
+
+    // riapre quella cliccata, a meno che fosse già aperta
+    if (!giaAperto) {
+      bottone.setAttribute('aria-expanded', 'true');
+      bottone.closest('.scelte-item').classList.add('is-open');
+      document.getElementById(bottone.getAttribute('aria-controls')).hidden = false;
+    }
+  });
+});
+
+
 
 const breakdownTabs = document.querySelector('.breakdownTabs');
 const breakdownTabsItems = document.querySelectorAll('.breakdownTabs-item');
